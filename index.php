@@ -13,4 +13,38 @@ include_once('nata_den/Linear.php');
 include_once('nata_den/Square.php');
 include_once('nata_den/MyLog.php');
 
+
+echo "Enter 3 parameters divided by space \n";
+$params = explode(" ", fgets(STDIN));
+
+try {
+	if (count($params) != 3) {
+		throw new NataDenException("Wrong parameter count. Please enter exactly 3 parameters.");
+	}
+	$a = (float)$params[0];
+	$b = (float)$params[1];
+	$c = (float)$params[2];
+	if ($params[0] == 0) {
+		MyLog::log("Linear equation: ".$b."x + ".$c." = 0");
+		$linear = new Linear();
+		MyLog::log("Answer: ".$linear->MachLinear($b, $c));	
+	}
+	else {
+		MyLog::log("Square equation: ".$a."x^2 + ".$b."x + ".$c." = 0");
+		$square = new Square();
+		if (is_array($temp = $square->solve($a, $b, $c))) {
+			MyLog::log("Answer: ". implode(" , ", $temp));
+		}
+		else {
+			MyLog::log("Answer: ".$temp);
+		}
+		
+	}	
+}
+catch (NataDenException $e){
+	MyLog::log($e->GetMessage());
+}
+
+MyLog::write()."\n";
+
 ?>

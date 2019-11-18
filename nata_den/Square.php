@@ -24,6 +24,7 @@ class Square extends Linear implements \core\EquationInterface{
 			} 
 			elseif ($disc > 0)
 			{
+				MyLog::log("This is a square equation");
 				$t1=((-$b + sqrt($disc)) / (2 * $a));
 				$t2=((-$b - sqrt($disc)) / (2 * $a));
 				return $this->x = array($t1,$t2);

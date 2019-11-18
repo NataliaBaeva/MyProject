@@ -11,6 +11,7 @@ class Linear {
 		} 
 		else 
 		{
+			MyLog::log("This is a linear equation");
 			$this->x = (-$b/$a);
 			return $this->x;
 		}
