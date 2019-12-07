@@ -13,7 +13,7 @@ include_once('nata_den/Linear.php');
 include_once('nata_den/Square.php');
 include_once('nata_den/MyLog.php');
 
-
+MyLog::log('Version '.file_get_contents('./version'));
 echo "Enter 3 parameters divided by space \n";
 $params = explode(" ", fgets(STDIN));
 
