@@ -1,0 +1,43 @@
+{
+    "require": {
+	    "php":">=7.3.0",
+        "phpunit/phpunit": "^9",
+		"rok9ru/trpo-core":"dev-master",
+		"nataliabaeva/new":"dev-master"
+    },
+	"repositories":[
+        {
+            "type":"package",
+            "package":{
+                "name":"rok9ru/trpo-core",
+                "version":"dev-master",
+                "source":{
+                    "type":"git",
+                    "url":"https://github.com/rok9ru/trpo-core",
+                    "reference":"master"
+                },
+				"autoload":{
+                    "classmap":["LogAbstract.php"],
+                    "files":["EquationInterface.php", "LogInterface.php"]
+                }
+            }
+        },
+		{
+            "type":"package",
+            "package":{
+                "name":"nataliabaeva/new",
+                "version":"dev-master",
+                "source":{
+                    "type":"git",
+                    "url":"https://github.com/nataliabaeva/new",
+                    "reference":"master"
+                },
+				"autoload": {
+					"classmap": [
+						"nata_den/"
+								]
+				}
+            }
+        }
+    ]
+}
